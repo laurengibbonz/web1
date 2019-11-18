@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+        <canvas id="court" width="600" height="600"></canvas>
+
+<script>
+const canvas = document.getElementById("court");
+let ctx = canvas.getContext("2d"),
+    ballRadius = 10,
+    x = canvas.width/2,
+    y = ballRadius,
+    dx = 2,
+    dy = 2,
+    color = "red";
+
+function drawBall() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ctx.beginPath();
+    ctx.arc(x, y, ballRadius, 0, Math.PI*2);
+    ctx.fillStyle = color;
+    ctx.fill();
+    ctx.closePath();
+}
+
+//Challenge: Change ball color each time it hits the wall
+function draw() {
+    ctx.fillStyle = "white";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    // ctx.clearRect(0, 0, canvas.width, canvas.height);
+    drawBall();
+
+    if(x + dx > canvas.width-ballRadius || x + dx < 0) {
+        dx = -dx;
+    }
+    if(y + dy > canvas.height-ballRadius || y + dy < 0) {
+        dy = -dy;
+    }
+
+    x += dx;
+    y += dy;
+}
+
+setInterval(draw, 10);
+
+</script>
+</body>
+</html>

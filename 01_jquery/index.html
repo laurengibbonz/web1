@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Demo</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <h1>jQuery</h1>
+
+  <button class="button">Button</button>
+  <button class="button">Button</button>
+  <button class="button">Button</button>
+  <button class="button">Button</button>
+
+  <label for="firstName">Name</label>
+  <input id="name" type="text" name="firstName">
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script>
+    // let buttons = document.querySelectorAll('.button');
+    // for(let i = 0; i < buttons.length; i++) {
+    //   buttons[i].classList.add('active');
+    //   buttons[i].addEventListener('click', function() {
+    //     alert('Hello World!');
+    //   });
+    // }
+
+    // $('.button').addClass('active');
+    // $('.button').on('touch', function(){
+    //     alert('Hello World');
+    // });
+
+     document.getElementById('name').value = 'Lauren';
+    // $('#name').val('Lauren');
+
+    jQuery('button').on('click', triggerAlert);
+
+    function triggerAlert() {
+      alert('button clicked');
+    }
+
+  </script>
+</body>
+</html>

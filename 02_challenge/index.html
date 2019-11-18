@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+<style>
+/** Reset.css
+ ---------------------------------------------------------*/
+ html, body, div, span, applet, object, iframe,
+ h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+ a, abbr, acronym, address, big, cite, code,
+ del, dfn, em, img, ins, kbd, q, s, samp,
+ small, strike, strong, sub, sup, tt, var,
+ b, u, i, center,
+ dl, dt, dd, ol, ul, li,
+ fieldset, form, label, legend,
+ table, caption, tbody, tfoot, thead, tr, th, td,
+ article, aside, canvas, details, embed, 
+ figure, figcaption, footer, header, hgroup, 
+ menu, nav, output, ruby, section, summary,
+ time, mark, audio, video {
+     margin: 0;
+     padding: 0;
+     border: 0;
+     font-size: 100%;
+     font: inherit;
+     vertical-align: baseline;
+ }
+ 
+ article, aside, details, figcaption, figure, 
+ footer, header, hgroup, menu, nav, section {
+     display: block;
+ }
+ body {
+     line-height: 1;
+ }
+ ol, ul {
+     list-style: none;
+ }
+ blockquote, q {
+     quotes: none;
+ }
+ blockquote:before, blockquote:after,
+ q:before, q:after {
+     content: '';
+     content: none;
+ }
+ table {
+     border-collapse: collapse;
+     border-spacing: 0;
+ }
+
+body {
+    background: #666666;
+}
+
+.button {
+    border: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    margin: 0 auto;
+    padding: 10px 15px;
+    text-transform: uppercase;
+    top: 50%;
+    left: 48%;
+    position: absolute;
+    text-align: center;
+    width: 120px;
+    z-index: 1;
+}
+
+.button::after {
+    content: 'Open';
+}
+
+.button.button-open::after {
+    content: 'Close';
+}
+
+.rect {
+    background-color: #191919;
+    float: left;
+    height: 0;
+    margin: 0;
+    position: relative;
+    top: 0;
+    transition: all 1000ms ease-in-out;
+    width: 20vw;
+}
+
+.rect.open {
+    height: 100vh;
+}
+
+.rect:first-of-type {
+    transition-delay: .6s;
+}
+
+.rect:nth-of-type(2) {
+    transition-delay: .5s;
+}
+
+.rect:nth-of-type(3) {
+    transition-delay: .4s;
+}
+
+.rect:nth-of-type(4) {
+    transition-delay: .3s;
+}
+
+.rect:nth-of-type(5) {
+    transition-delay: .2s;
+}
+
+.rect.open:first-of-type {
+    transition-delay: .1s;
+}
+
+.rect.open:nth-of-type(2) {
+    transition-delay: .3s;
+}
+
+.rect.open:nth-of-type(3) {
+    transition-delay: .5s;
+}
+
+.rect.open:nth-of-type(4) {
+    transition-delay: .7s;
+}
+
+.rect.open:nth-of-type(5) {
+    transition-delay: .9s;
+}
+
+
+
+</style>
+</head>
+
+<body>
+
+    <div class="button"></div>
+
+    <div class="overlay">
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+        <div class="rect"></div>
+    </div>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+//On click use jQuery to toggle .button to class button-open
+//And toggle .rect to class open
+
+</script>
+</body>
+</html>
