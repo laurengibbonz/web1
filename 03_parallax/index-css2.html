@@ -54,20 +54,6 @@ body {
     font: 24px Helvetica, sans-serif;
 }
 
-section {
-     background-color: #191919;
-     display: flex;
-     align-items: center;
-     justify-content: center;
-     height: 100vh;
-     max-height: 100vh;
-     scroll-snap-align: start;
- }
- 
- section:nth-of-type(odd) {
-     background-color: #000000;
- }
-
 .wrapper {
   /* The height needs to be set to a fixed value for the effect to work. */
   height: 100vh;
@@ -82,13 +68,13 @@ section {
 section {
   /* Needed for children to be absolutely positioned relative to the parent. */
   position: relative;
+  /* The height of the container. Must be set, but it doesn't really matter what the value is. */
   height: 100vh;
-  
+
   /* For text formatting. */
   display: flex;
   align-items: center;
   justify-content: center;
-  color: white;
 }
 
 

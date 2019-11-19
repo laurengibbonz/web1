@@ -27,18 +27,20 @@
     //   });
     // }
 
-    // $('.button').addClass('active');
     // $('.button').on('touch', function(){
     //     alert('Hello World');
     // });
 
-     document.getElementById('name').value = 'Lauren';
+    //document.getElementById('name').value = 'Lauren';
     // $('#name').val('Lauren');
 
-    jQuery('button').on('click', triggerAlert);
+    // $('.button').addClass('active');
+    $('button').on('click', triggerAlert);
 
     function triggerAlert() {
-      alert('button clicked');
+      $(this).toggleClass('active');
+      //  $(this).toggleClass('active');
+      // alert('button clicked'); 
     }
 
   </script>

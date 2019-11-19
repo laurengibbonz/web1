@@ -9,39 +9,38 @@
 <script>
 const canvas = document.getElementById("court");
 let ctx = canvas.getContext("2d"),
-    ballRadius = 10,
+    ballRadius = 50,
     x = canvas.width/2,
     y = canvas.height,
-    dx = 2,
-    dy = -2;
+    dx = 20,
+    dy = -20;
 
-function drawBall() {
-    ctx.fillStyle = "gray";
+function drawBall(){
+    ctx.fillStyle = "grey";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
-    ctx.fillStyle = "blue";
+    ctx.fillStyle = "green";
     ctx.fill();
     ctx.closePath();
 }
 
-function draw() {
-    ctx.fillStyle = "gray";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
+function draw(){
     drawBall();
-
-    if(x + dx > canvas.width || x + dx < 0) {
-        dx = -dx;
+    if(x + dx > canvas.width - ballRadius || x + dx < 0) {
+       dx = -dx; 
     }
     if(y + dy > canvas.height || y + dy < 0) {
-        dy = -dy;
+       dy = -dy; 
     }
-
+    
     x += dx;
     y += dy;
 }
 
-setInterval(draw, 10);
+setInterval(draw, 40);
+
+drawBall();
 
 
 </script>

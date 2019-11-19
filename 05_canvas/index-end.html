@@ -9,7 +9,7 @@
 <script>
 const canvas = document.getElementById("court");
 let ctx = canvas.getContext("2d"),
-    ballRadius = 10,
+    ballRadius = 15,
     x = canvas.width/2,
     y = ballRadius,
     dx = 2,
@@ -17,7 +17,7 @@ let ctx = canvas.getContext("2d"),
     color = "red";
 
 function drawBall() {
-    ctx.fillStyle = "white";
+    ctx.fillStyle = "grey";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.beginPath();
     ctx.arc(x, y, ballRadius, 0, Math.PI*2);
@@ -34,14 +34,21 @@ function draw() {
     drawBall();
 
     if(x + dx > canvas.width-ballRadius || x + dx < 0) {
+        color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
         dx = -dx;
     }
     if(y + dy > canvas.height-ballRadius || y + dy < 0) {
+        color = `rgb(${randomColor()}, ${randomColor()}, ${randomColor()})`;
         dy = -dy;
     }
 
     x += dx;
     y += dy;
+}
+
+function randomColor() {
+    let number = Math.floor(Math.random() * 255);
+    return number;
 }
 
 setInterval(draw, 10);

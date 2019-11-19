@@ -154,7 +154,10 @@ body {
 <script type="text/javascript">
 //On click use jQuery to toggle .button to class button-open
 //And toggle .rect to class open
-
+$('.button').on('click', function(){
+    $(this).toggleClass('button-open');
+    $('.rect').toggleClass('open');
+});
 </script>
 </body>
 </html>
