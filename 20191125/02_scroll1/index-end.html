@@ -4,60 +4,57 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 
-    <script type="text/javascript" src="./js/ScrollMagic.min.js"></script>
-	<script type="text/javascript" src="./js/debug.addIndicators.min.js"></script>
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+    <script src="js/debug.addIndicators.min.js"></script>
 </head>
+<style>
+html, body {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
 
+#container {
+	margin: 55vh 0;
+	padding: 50px;
+
+	outline: 1px dashed orange;
+}
+
+#block {
+	padding: 10px;
+
+	border: 1px solid black;
+
+	font-family: Helvetica;
+}
+</style>
 <body>
 
-    <div class="wrapper">
-        <nav class="navigation" id="mainNav">
-            <a class="nav-link" id="nav1" href="#section-1">Section 1</a>
-            <a class="nav-link" id="nav2" href="#section-2">Section 2</a>
-            <a class="nav-link" id="nav3" href="#section-3">Section 3</a>
-            <a class="nav-link" id="nav4" href="#section-4">Section 4</a>
-            <a class="nav-link" id="nav5" href="#section-5">Section 5</a>
-        </nav>
-
-        <section class="page-section" id="section-1">
-            <h1>Section 1</h1>
-        </section>
-        <section class="page-section" id="section-2">
-            <h1>Section 2</h1>
-        </section>
-        <section class="page-section" id="section-3">
-            <h1>Section 3</h1>
-        </section>
-        <section class="page-section" id="section-4">
-            <h1>Section 4</h1>
-        </section>
-        <section class="page-section" id="section-5">
-            <h1>Section 5</h1>
-        </section>
+    <div id="container">
+        <div id="block">My first tween</div>
+    </div>
     </div>
 
 <script src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-// init controller
-var controller = new ScrollMagic.Controller({globalSceneOptions: {duration: 100}});
+$(function() {
+  var controller = new ScrollMagic.Controller();
 
-// build scenes
-new ScrollMagic.Scene({triggerElement: "#section-1"})
-                .setClassToggle("#nav1", "active") // add class toggle
-                .addIndicators() // add indicators (requires plugin)
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#section-2"})
-                .setClassToggle("#nav2", "active") // add class toggle
-                .addIndicators() // add indicators (requires plugin)
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#section-3"})
-                .setClassToggle("#nav3", "active") // add class toggle
-                .addIndicators() // add indicators (requires plugin)
-                .addTo(controller);
-new ScrollMagic.Scene({triggerElement: "#section-4"})
-                .setClassToggle("#nav4", "active") // add class toggle
-                .addIndicators() // add indicators (requires plugin)
-                .addTo(controller);
+  var blockTween = new TweenMax.to('#block', 1.5, {
+    backgroundColor: 'red'
+  });
+
+  var containerScene = new ScrollMagic.Scene({
+      triggerElement: '#container'
+    })
+    .setTween(blockTween)
+    .addIndicators()
+    .addTo(controller);
+});
 </script>
 </body>
 </html>
