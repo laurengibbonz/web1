@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/TweenMax.min.js"></script>
+    <script src="js/ScrollMagic.min.js"></script>
+    <script src="js/animation.gsap.min.js"></script>
+    <script src="js/debug.addIndicators.min.js"></script>
+</head>
+<style>
+section {
+    height: 100vh;
+}
+
+#reveal-elements {
+    text-align: center;
+}
+
+.box1 {
+    display: inline-block;
+    position: relative;
+    border-radius: 8px;
+    border: 0px solid white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0 5px;
+    min-width: 100px;
+    height: 100px;
+    margin: 0 auto 0 auto;
+}
+.digit {
+    background-color: black;
+    color: #FFFFFF;
+    opacity: 0;
+    -webkit-transform: translateX(-40px);
+            -moz-transform: translateX(-40px);
+            -ms-transform: translateX(-40px);
+                -o-transform: translateX(-40px);
+                    transform: translateX(-40px);
+    -webkit-transition: all 0.6s ease-out;
+            -moz-transition: all 0.6s ease-out;
+            -ms-transition: all 0.6s ease-out;
+                -o-transition: all 0.6s ease-out;
+                    transition: all 0.6s ease-out;
+}
+.digit.visible {
+    opacity: 1;
+    -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+                -o-transform: none;
+                    transform: none;
+}
+.digit:nth-child(2) {
+    margin-top: 50px;
+}
+.digit:nth-child(3) {
+    margin-top: 100px;
+}
+.digit:nth-child(4) {
+    margin-top: 150px;
+}
+.digit:nth-child(5) {
+    margin-top: 200px;
+}
+</style>
+<body>
+<section>
+    <div id="reveal-elements">
+        <div class="box1 digit"><p>1</p></div>
+    </div>
+</section>
+<section>
+    <div id="reveal-elements">
+        <div class="box1 digit"><p>1</p></div>
+        <div class="box1 digit"><p>2</p></div>
+        <div class="box1 digit"><p>3</p></div>
+        <div class="box1 digit"><p>4</p></div>
+        <div class="box1 digit"><p>5</p></div>
+    </div>
+</section>
+
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script type="text/javascript">
+
+</script>
+</body>
+</html>
