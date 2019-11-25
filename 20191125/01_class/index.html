@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+  <title>Class Example</title>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+
+</head>
+<body>
+
+<div id="demo"></div>
+
+<script>
+  class Car {
+  constructor(brand) {
+    this.carname = brand;
+  }
+  render(x) {
+    return x + ", I drive a " + this.carname;
+  }
+}
+
+mycar = new Car("Ford");
+document.getElementById("demo").innerHTML = mycar.render("Hello");
+</script>
+</body>
+</html>
