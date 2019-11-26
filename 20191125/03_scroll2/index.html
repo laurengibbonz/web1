@@ -3,17 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="css/style.css">
+
+    <script type="text/javascript" src="./js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="./js/ScrollMagic.min.js"></script>
+    <script type="text/javascript" src="./js/debug.addIndicators.min.js"></script>
 </head>
 
 <body>
 
     <div class="wrapper">
         <nav class="navigation" id="mainNav">
-            <a class="nav-link" href="#section-1">Section 1</a>
-            <a class="nav-link" href="#section-2">Section 2</a>
-            <a class="nav-link" href="#section-3">Section 3</a>
-            <a class="nav-link" href="#section-4">Section 4</a>
-            <a class="nav-link" href="#section-5">Section 5</a>
+            <a class="nav-link" id="nav-1" href="#section-1">Section 1</a>
+            <a class="nav-link" id="nav-2" href="#section-2">Section 2</a>
+            <a class="nav-link" id="nav-3" href="#section-3">Section 3</a>
+            <a class="nav-link" id="nav-4" href="#section-4">Section 4</a>
+            <a class="nav-link" id="nav-5"href="#section-5">Section 5</a>
         </nav>
 
         <section class="page-section" id="section-1">
@@ -33,44 +37,38 @@
         </section>
     </div>
 
-<script src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
+let section = document.getElementById('section-1');
+let sectionSize = section.offsetHeight;
+console.log(sectionSize);
 
-//Challenge load the page to animate to the section hash
-$(document).ready(function() {
-    $(window).scrollTop(0);
-    
-    if(window.location.hash) {
-        $('html, body').animate({
-            scrollTop: $(window.location.hash).offset().top + 'px'
-        }, 1000);
-    }
+let controller = new ScrollMagic.Controller({globalSceneOptions: {duration: sectionSize}});
 
-    $('.navigation a').on('click', function(e) {
-        e.preventDefault();
+new ScrollMagic.Scene({triggerElement: "#section-1"})
+    .setClassToggle("#nav-1", "active")
+    .addIndicators()
+    .addTo(controller);
 
-        var target = $(this).attr("href");
-        
-        $('html, body').stop().animate({
-                scrollTop: $(target).offset().top
-        }, 600, function() {
-                location.hash = target; 
-        });
+new ScrollMagic.Scene({triggerElement: "#section-2"})
+    .setClassToggle("#nav-2", "active")
+    .addIndicators()
+    .addTo(controller);
 
-        return false;
-    });
-});
+new ScrollMagic.Scene({triggerElement: "#section-3"})
+    .setClassToggle("#nav-3", "active")
+    .addIndicators()
+    .addTo(controller);
 
-$(window).scroll(function() {
-    var scrollDistance = $(window).scrollTop();
+new ScrollMagic.Scene({triggerElement: "#section-4"})
+    .setClassToggle("#nav-4", "active")
+    .addIndicators()
+    .addTo(controller);
 
-    $('.page-section').each(function(i) {
-        if($(this).position().top <= scrollDistance) {
-            $('.navigation a.active').removeClass('active');
-            $('.navigation a').eq(i).addClass('active');
-        }
-    });
-});
+new ScrollMagic.Scene({triggerElement: "#section-5"})
+    .setClassToggle("#nav-5", "active")
+    .addIndicators()
+    .addTo(controller);
+
 </script>
 </body>
 </html>

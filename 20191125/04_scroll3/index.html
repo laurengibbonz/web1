@@ -19,6 +19,8 @@ section {
 }
 
 .box1 {
+    height: 100px;
+    width: 100px;
     display: inline-block;
     position: relative;
     border-radius: 8px;
@@ -85,7 +87,18 @@ section {
 
 <script src="js/jquery-3.4.1.min.js"></script>
 <script type="text/javascript">
-
+let controller = new ScrollMagic.Controller();
+let revealElements = document.getElementsByClassName("digit");
+    for (var i=0; i<revealElements.length; i++) { // create a scene for each element
+        new ScrollMagic.Scene({
+            triggerElement: revealElements[i], // y value not modified, so we can use element as trigger as well
+            // offset: 50												 // start a little later
+            // triggerHook: 0.9,
+        })
+        .setClassToggle(revealElements[i], "visible") // add class toggle
+        .addIndicators({name: "digit " + (i+1) }) 
+        .addTo(controller);
+		}
 </script>
 </body>
 </html>

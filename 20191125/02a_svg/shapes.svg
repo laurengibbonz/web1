@@ -1,0 +1,13 @@
+<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+	 viewBox="0 0 1000 1000" style="enable-background:new 0 0 1000 1000;" xml:space="preserve">
+<g>
+	<rect x="240.5" y="205.5" class="st0" width="539" height="539"/>
+	<path d="M779,206v538H241V206H779 M780,205H240v540h540V205L780,205z"/>
+</g>
+<path class="st1" d="M157.5,86.5c0,0,98-42,111,0s-14,98,57,102s115-50,176,0s16,54,38,99s79,34,70,101"/>
+<g class="circles">
+	<circle cx="107.5" cy="550.5" r="35"/>
+	<circle cx="152" cy="782" r="35"/>
+	<circle cx="850" cy="562" r="35"/>
+</g>
+</svg>

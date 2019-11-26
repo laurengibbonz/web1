@@ -31,26 +31,30 @@ html, body {
 
 	font-family: Helvetica;
 }
+
+#block.active {
+  transform: scale(1.5);
+}
 </style>
 <body>
 
     <div id="container">
         <div id="block">My first tween</div>
     </div>
-    </div>
 
 <script type="text/javascript">
 $(function() {
   let controller = new ScrollMagic.Controller();
 
-  let blockTween = new TweenMax.to('#block', 1.5, {
+  let blockTween = new TweenMax.to('#block', .5, {
     backgroundColor: 'red'
   });
 
-  let containerScene = new ScrollMagic.Scene({
+  new ScrollMagic.Scene({
       triggerElement: '#container'
     })
     .setTween(blockTween)
+    // .setClassToggle("#block", "active")
     .addIndicators()
     .addTo(controller);
 });
